@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
     
+  # resources :user_favourites
   post 'users/create', to: "users#create"
   post "/auth/create", to: "auth#create"
   get "/auth/show", to: "auth#show"
 
-  get "/favorites", to: "favorites#my_favorites"
-  post "/favorites", to: "favorites#add_favorites"
-  delete "/favorites", to: "favorites#remove_favorite"
+  get "/user_favourites", to: "user_favourites#my_favourites"
+  post "/user_favourites", to: "user_favourites#add_favourites"
+  delete "/user_favourites", to: "user_favourites#remove_favourite"
   
   resources :movies, only: [:index, :show]
   post '/movies/search', to: "search#index"
@@ -29,6 +30,12 @@ Rails.application.routes.draw do
 
   resources :trailers, only: [:index]
   post '/trailers', to: "trailers#index"
+
+  resources :show_trailers, only: [:index]
+  post '/show_trailers', to: "show_trailers#index"
+
+  # resources :show_season, only: [:index]
+  # post '/show_season', to: "show_season#index"
 
   resources :recommended, only: [:index]
   post '/recommended', to: "recommended#index"

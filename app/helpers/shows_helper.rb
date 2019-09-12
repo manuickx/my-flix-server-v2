@@ -8,4 +8,12 @@ module ShowsHelper
         show = RestClient.get("https://api.themoviedb.org/3/tv/#{params[:show_id]}?api_key=#{Rails.application.credentials.dig(:themoviedb_api)}&language=en-US")
     end
     
+    def get_show_trailers
+        show_trailers = RestClient.get("https://api.themoviedb.org/3/tv/#{params[:show_id]}/videos?api_key=#{Rails.application.credentials.dig(:themoviedb_api)}&language=en-US")
+    end
+
+    def get_show_season
+        show_season = RestClient.get("https://api.themoviedb.org/3/tv/#{params[:show_id]}/season/#{params[:season]}?api_key=#{Rails.application.credentials.dig(:themoviedb_api)}&language=en-US")
+    end
+
 end
