@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   post '/shows', to: "shows#index"
   post '/shows/:id', to: "shows#show"
 
+  resources :show_season, only: [:index]
+  post '/show_season', to: "show_season#index"
+
   resources :credits, only: [:index]
   post '/credits', to: "credits#index"
 
