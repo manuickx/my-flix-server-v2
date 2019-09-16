@@ -1,7 +1,7 @@
 class CreditsController < ApplicationController
 
     def index
-      render json: get_movie_credits
+      render json: get_item_credits
     end
 
 end

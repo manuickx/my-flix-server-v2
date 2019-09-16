@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
   
-    include MoviesHelper, ShowsHelper, ActorsHelper
+    include Helpers
 
     def issue_token(payload)
       JWT.encode(payload, Rails.application.credentials.dig(:jwt_secret))
