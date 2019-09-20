@@ -1,7 +1,7 @@
 module Helpers
 
     def get_items
-        items = RestClient.get("https://api.themoviedb.org/3/discover/#{params[:type]}?api_key=b97665262d6ca8cc440f76a9124c04c6&language=en-US&include_adult=false&include_video=false&page=#{params[:page]}")
+        items = RestClient.get("https://api.themoviedb.org/3/discover/#{params[:type]}?api_key=#{Rails.application.credentials.dig(:themoviedb_api)}&language=en-US&include_adult=false&include_video=false&page=#{params[:page]}")
     end
 
     def get_one_item
