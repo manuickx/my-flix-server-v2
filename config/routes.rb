@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
     
+  resources :users
   post 'users/create', to: "users#create"
   post "/auth/create", to: "auth#create"
   get "/auth/show", to: "auth#show"
@@ -19,6 +20,9 @@ Rails.application.routes.draw do
 
   resources :actor_movies, only: [:index]
   post '/actor_movies', to: "actor_movies#index"
+
+  resources :actor_images, only: [:index]
+  post '/actor_images', to: "actor_images#index"
 
   resources :show_season, only: [:index]
   post '/show_season', to: "show_season#index"

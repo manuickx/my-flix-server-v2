@@ -10,7 +10,7 @@ class UserFavouritesController < ApplicationController
     
       def add_favourites
         user_id = no_call_current_user[:user_id]
-        favourite = UserFavourite.create!(user_id: user_id, movie_ref_id: params[:movie_ref_id], title: params[:title], overview: params[:overview], poster_path: params[:poster_path], vote_average: params[:vote_average])
+        favourite = UserFavourite.create!(user_id: user_id, movie_ref_id: params[:movie_ref_id], title: params[:title], overview: params[:overview], poster_path: params[:poster_path], vote_average: params[:vote_average], item_type: params[:type])
         render json: favourite
       end
     
