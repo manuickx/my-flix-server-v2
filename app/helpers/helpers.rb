@@ -42,6 +42,10 @@ module Helpers
         actor_movies = RestClient.get("https://api.themoviedb.org/3/person/#{params[:actor_id]}/movie_credits?api_key=#{Rails.application.credentials.dig(:themoviedb_api)}&language=en-US")
     end
 
+    def get_actor_shows
+        actor_shows = RestClient.get("https://api.themoviedb.org/3/person/#{params[:actor_id]}/tv_credits?api_key=#{Rails.application.credentials.dig(:themoviedb_api)}&language=en-US")
+    end
+
     def get_actor_images
         actor_movies = RestClient.get("https://api.themoviedb.org/3/person/#{params[:actor_id]}/images?api_key=#{Rails.application.credentials.dig(:themoviedb_api)}&language=en-US")
     end

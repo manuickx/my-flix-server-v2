@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   resources :actor_movies, only: [:index]
   post '/actor_movies', to: "actor_movies#index"
 
+  resources :actor_shows, only: [:index]
+  post '/actor_shows', to: "actor_shows#index"
+
   resources :actor_images, only: [:index]
   post '/actor_images', to: "actor_images#index"
 
