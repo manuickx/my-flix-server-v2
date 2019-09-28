@@ -25,7 +25,7 @@ module Helpers
     end
 
     def get_item_search
-        movies = RestClient.get("https://api.themoviedb.org/3/search/#{params[:search_type]}?api_key=#{Rails.application.credentials.dig(:themoviedb_api)}&query=#{params[:search_term]}&page=#{params[:page]}&include_adult=false")
+        movies = RestClient.get("https://api.themoviedb.org/3/search/#{params[:search_type]}?api_key=#{Rails.application.credentials.dig(:themoviedb_api)}&query=#{params[:search_term]}&page=#{params[:page]}&include_adult=#{params[:adult]}")
     end
 
     def get_show_season
