@@ -1,6 +1,7 @@
 # myFlixDb
 
-...is a web app for creating a collection of favourite movies and tv shows.
+...is a web app for creating a collection of favourite movies and tv shows.<br><br>
+The app is live at https://myflixxdb.herokuapp.com/
 
 ## Features
 
@@ -10,7 +11,7 @@
 
 * Add favourite movies and tv shows to your collection
 
-## Techs used for server - API
+## Tech/frameworks used:
 
 * Ruby 2.6.2
 
