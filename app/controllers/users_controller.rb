@@ -1,14 +1,13 @@
 class UsersController < ApplicationController
-  
-    def create
+
+      def create
         user = User.new(name: params[:name], email: params[:email], age: params[:age], password: params[:password])
-        if user.save
-          payload = { user_id: user.id }
-          token = issue_token(payload)
-          render json: { jwt: token }
-        else
-          render json: { error: 'There was an error.' }
-        end
+        user.save!
+        payload = { user_id: user.id }
+        token = issue_token(payload)
+        render json: { jwt: token }
+      rescue ActiveRecord::RecordInvalid => invalid
+        render json: {error: invalid.record.errors}
       end
 
       def update
